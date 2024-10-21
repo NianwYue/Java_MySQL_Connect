@@ -1,4 +1,4 @@
-package DB;
+package cn.edu.sdcet.db;
 
 import java.sql.SQLException;
 import java.util.InputMismatchException;

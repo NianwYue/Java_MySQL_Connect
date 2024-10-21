@@ -1,4 +1,4 @@
-package DB;
+package cn.edu.sdcet.db;
 
 import java.sql.*;
 import java.util.Scanner;
