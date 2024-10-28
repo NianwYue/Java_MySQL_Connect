@@ -20,9 +20,9 @@ public class J2300720 {
                 System.out.println("7. 添加学生成绩");
                 System.out.println("8. 删除学生信息");
                 System.out.println("9. 删除课程信息");
-                System.out.println("11. 查看数据库学生表");
-                System.out.println("22. 查看数据库课程表");
-                System.out.println("33. 查看数据库成绩表");
+                System.out.println("10. 查看数据库学生表");
+                System.out.println("11. 查看数据库课程表");
+                System.out.println("12. 查看数据库成绩表");
                 System.out.println("0. 离开");
                 System.out.println("================");
                 System.out.print("请选择: ");
@@ -68,13 +68,13 @@ public class J2300720 {
                         case 9:
                             DatabaseOperations.deleteCourseById(scan);
                             break;                     
-                        case 11:
+                        case 10:
                             DatabaseOperations.viewStudents();
                             break;
-                        case 22:
+                        case 11:
                             DatabaseOperations.viewCourses();
                             break;
-                        case 33:
+                        case 12:
                             DatabaseOperations.viewGrades();
                             break;
                         case 0:
