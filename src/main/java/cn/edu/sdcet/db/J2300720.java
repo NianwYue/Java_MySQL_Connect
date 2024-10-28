@@ -91,9 +91,7 @@ public class J2300720 {
                 }
             }
         } finally {
-            if (scan != null) {
-                scan.close(); 
-            }
+            scan.close();
         }
     }
 }
