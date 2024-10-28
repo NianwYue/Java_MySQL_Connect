@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.sdcet.mapper.CourseMapper">
+    <insert id="insertCourse">
+        INSERT INTO Courses (course_id, course_name, credits)
+        VALUES (#{courseId}, #{courseName}, #{credits})
+    </insert>
+
+    <update id="updateCourse">
+        UPDATE Courses
+        SET course_name = #{courseName}, credits = #{credits}
+        WHERE course_id = #{courseId}
+    </update>
+
+    <delete id="deleteCourse">
+        DELETE FROM Courses WHERE course_id = #{courseId}
+    </delete>
+
+    <select id="getCourseById" resultType="cn.edu.sdcet.entity.Course">
+        SELECT * FROM Courses WHERE course_id = #{courseId}
+    </select>
+
+    <select id="getAllCourses" resultType="cn.edu.sdcet.entity.Course">
+        SELECT * FROM Courses
+    </select>
+
+    <select id="countById" resultType="int">
+        SELECT COUNT(*) FROM Courses WHERE course_id = #{courseId}
+    </select>
+</mapper>

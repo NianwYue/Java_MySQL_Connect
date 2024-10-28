@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.sdcet.mapper.GradeMapper">
+    <insert id="insertGrade">
+        INSERT INTO Grades (student_id, course_id)
+        VALUES (#{studentId}, #{courseId})
+    </insert>
+
+    <update id="updateGrade">
+        UPDATE Grades
+        SET grade = #{grade}
+        WHERE student_id = #{studentId} AND course_id = #{courseId}
+    </update>
+
+    <delete id="deleteGradeByStudentId">
+        DELETE FROM Grades WHERE student_id = #{studentId}
+    </delete>
+
+    <delete id="deleteGradeByCourseId">
+        DELETE FROM Grades WHERE course_id = #{courseId}
+    </delete>
+
+    <select id="getGrade" resultType="cn.edu.sdcet.entity.Grade">
+        SELECT * FROM Grades
+        WHERE student_id = #{studentId} AND course_id = #{courseId}
+    </select>
+
+    <select id="getAllGrades" resultType="cn.edu.sdcet.entity.Grade">
+        SELECT * FROM Grades
+    </select>
+
+    <update id="updateCourseSelection">
+        UPDATE Grades
+        SET course_id = #{newCourseId}
+        WHERE student_id = #{studentId} AND course_id = #{oldCourseId}
+    </update>
+</mapper>

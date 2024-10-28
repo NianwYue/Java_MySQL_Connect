@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.sdcet.mapper.StudentMapper">
+    <insert id="insertStudent">
+        INSERT INTO Students (student_id, name, sex, birth_date, political)
+        VALUES (#{studentId}, #{name}, #{sex}, #{birthDate}, #{political})
+    </insert>
+
+    <update id="updateStudent">
+        UPDATE Students
+        SET name = #{name}, sex = #{sex}, birth_date = #{birthDate}, political = #{political}
+        WHERE student_id = #{studentId}
+    </update>
+
+    <delete id="deleteStudent">
+        DELETE FROM Students WHERE student_id = #{studentId}
+    </delete>
+
+    <select id="getStudentById" resultType="cn.edu.sdcet.entity.Student">
+        SELECT * FROM Students WHERE student_id = #{studentId}
+    </select>
+
+    <select id="getAllStudents" resultType="cn.edu.sdcet.entity.Student">
+        SELECT * FROM Students
+    </select>
+
+    <select id="countById" resultType="int">
+        SELECT COUNT(*) FROM Students WHERE student_id = #{studentId}
+    </select>
+</mapper>
